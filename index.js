@@ -1,18 +1,10 @@
-function rowSumOddNumbers(n) {
-  let num = 1;
+const binaryArrayToNumber = (arr) => {
+  let arr1 = arr.reverse();
   let sum = 0;
-  for (let i = 0; i < n; i++) {
-    sum = 0;
-    for (let j = 1; j <= i + 1; j++) {
-      if (i != 0) {
-        num = num + 2;
-        sum = sum + num;
-      } else {
-        sum = 1;
-      }
-    }
+  for (let i = 0; i < arr1.length; i++) {
+    sum += arr1[i] * Math.pow(2, i);
   }
   return sum;
-}
+};
 
-console.log(rowSumOddNumbers(42));
+console.log(binaryArrayToNumber([0, 0, 0, 0, 0]));
