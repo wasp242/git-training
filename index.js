@@ -1,12 +1,9 @@
-function tribonacci(arr, n) {
-  for (let i = 0; i < n; i++) {
-    let sum = 0;
-    for (let j = i; j < i + 3; j++) {
-      sum += arr[j];
-    }
-    arr.push(sum);
-  }
-  return arr.slice(0, n);
-}
+integer_list = [1, 1, 2, 3, 1, 2, 3, 4];
+values_list = [1, 3];
+Array.prototype.remove_ = function (integer_list, values_list) {
+  return integer_list.filter(
+    (item) => !values_list.some((val) => val === item)
+  );
+};
 
-console.log(tribonacci([1, 1, 1], 10));
+console.log(integer_list.remove_(integer_list, values_list));
